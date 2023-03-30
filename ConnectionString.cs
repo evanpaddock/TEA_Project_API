@@ -10,7 +10,7 @@ namespace TEA_Project_API
         public string cs{get; set;}
 
         public ConnectionString(){
-            cs = $@"server={Server}; user={Username}; database={Database}; port={Port}; password={Password};convert zero datetime=True";
+            cs = $@"server={Server}; user={Username}; database={Database}; port={Port}; password={Password};";
         }
     }
 }
