@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TEA_Project_API.props" />
+</Project>
