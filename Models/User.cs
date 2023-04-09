@@ -7,5 +7,6 @@ namespace TEA_Project_API.Models
         public string Password{get; set;}
         public string UserEmail{get; set;}
         public DateOnly DateJoined{get; set;}
+        public int Role_ID{get; set;}
     }
 }
