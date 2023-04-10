@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TEA_Project_API.Models;
 
 namespace TEA_Project_API.Controllers
 {
@@ -13,9 +14,17 @@ namespace TEA_Project_API.Controllers
     {
         // GET: api/Car
         [HttpGet(Name = "GetCars")]
-        public IEnumerable<string> Get()
+        public IEnumerable<Car> Get()
         {
-            return new string[] { "value1", "value2" };
+            ConnectionString cs = new ConnectionString();
+
+            String Conn = cs.cs;
+
+            List<Car>myCar = new List<Car>();
+
+            return myCar;
+
+            
         }
 
         // GET: api/Car/5
