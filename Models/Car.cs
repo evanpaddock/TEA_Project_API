@@ -2,6 +2,7 @@ namespace TEA_Project_API.Models
 {
     public class Car
     {
+        public Car(){}
         public int CarID{get; set;}
         public string Make{get; set;}
         public string Model{get; set;}
