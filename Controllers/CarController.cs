@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TEA_Project_API.Models;
+using TEA_Project_API.Database;
+using TEA_Project_API.Database.Cars;
 
 namespace TEA_Project_API.Controllers
 {
@@ -16,34 +18,28 @@ namespace TEA_Project_API.Controllers
         [HttpGet(Name = "GetCars")]
         public IEnumerable<Car> Get()
         {
-            ConnectionString cs = new ConnectionString();
-
-            String Conn = cs.cs;
-
-            List<Car>myCar = new List<Car>();
-
-            return myCar;
-
-            
+            return ReadCars.GetAllCars();
         }
 
         // GET: api/Car/5
         [HttpGet("{id}", Name = "GetCar")]
-        public string Get(int id)
+        public Car Get(int id)
         {
-            return "value";
+            return ReadCars.GetCar(id);
         }
 
         // POST: api/Car
         [HttpPost(Name = "PostCar")]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Car myCar)
         {
+            SaveCar.NewCar(myCar);
         }
 
         // PUT: api/Car/5
-        [HttpPut("{id}", Name = "PutCar")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut(Name = "PutCar")]
+        public void Put([FromBody] Car myCar)
         {
+            SaveCar.UpdateCar(myCar);
         }
 
         // DELETE: api/Car/5
