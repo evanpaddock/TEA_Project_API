@@ -9556,24 +9556,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Evan Paddock\\.nuget\\packages\\": {}
+    "/Users/evanpaddock/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Evan Paddock\\Desktop\\TEA_Project\\TEA_Project_API\\TEA_Project_API.csproj",
+      "projectUniqueName": "/Users/evanpaddock/Desktop/TEA_Project/TEA_Project_API/TEA_Project_API.csproj",
       "projectName": "TEA_Project_API",
-      "projectPath": "C:\\Users\\Evan Paddock\\Desktop\\TEA_Project\\TEA_Project_API\\TEA_Project_API.csproj",
-      "packagesPath": "C:\\Users\\Evan Paddock\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Evan Paddock\\Desktop\\TEA_Project\\TEA_Project_API\\obj\\",
+      "projectPath": "/Users/evanpaddock/Desktop/TEA_Project/TEA_Project_API/TEA_Project_API.csproj",
+      "packagesPath": "/Users/evanpaddock/.nuget/packages/",
+      "outputPath": "/Users/evanpaddock/Desktop/TEA_Project/TEA_Project_API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Evan Paddock\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/evanpaddock/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -9616,24 +9617,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -9642,7 +9625,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }

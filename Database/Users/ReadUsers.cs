@@ -12,18 +12,16 @@ namespace TEA_Project_API.Database.Users
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = @"SELECT * FROM User";
+            string stm = @"SELECT * FROM USER";
             using var cmd = new MySqlCommand(stm, con);
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
             List<User> myUsers = new List<User>();
 
             while (rdr.Read()) {
-                User myUser = new User(){UserID=rdr.GetInt32(0), Make=rdr.GetString(1), 
-                                        Model=rdr.GetString(2), Year=rdr.GetString(3), Trim=rdr.GetString(4), 
-                                        Gas_Mileage=rdr.GetString(5), Tank_Size=rdr.GetString(6), Fuel_Type=rdr.GetString(7),
-                                        HorsePower = rdr.GetInt32(8), Torque = rdr.GetInt32(9), Transmission = rdr.GetString(10),
-                                        Deleted = rdr.GetBoolean(11)};
+                User myUser = new User(){User_ID=rdr.GetInt32(2),UserName=rdr.GetString(0), 
+                                        Password=rdr.GetString(1), UserEmail=rdr.GetString(3), DateJoined=DateOnly.FromDateTime(rdr.GetDateTime(4))
+                                        };
                 
                 myUsers.Add(myUser);
             }
@@ -36,7 +34,7 @@ namespace TEA_Project_API.Database.Users
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = @"SELECT * FROM User WHERE UserID=@id";
+            string stm = @"SELECT * FROM USER WHERE User_ID=@id";
 
             using var cmd = new MySqlCommand(stm, con);
             cmd.Parameters.AddWithValue("@id", id);
@@ -45,11 +43,9 @@ namespace TEA_Project_API.Database.Users
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
             rdr.Read();
-            User myUser = new User(){UserID=rdr.GetInt32(0), Make=rdr.GetString(1), 
-                                    Model=rdr.GetString(2), Year=rdr.GetString(3), Trim=rdr.GetString(4), 
-                                    Gas_Mileage=rdr.GetString(5), Tank_Size=rdr.GetString(6), Fuel_Type=rdr.GetString(7),
-                                    HorsePower = rdr.GetInt32(8), Torque = rdr.GetInt32(9), Transmission = rdr.GetString(10),
-                                    Deleted = rdr.GetBoolean(11)};
+            User myUser = new User(){User_ID=rdr.GetInt32(2),UserName=rdr.GetString(0), 
+                                        Password=rdr.GetString(1), UserEmail=rdr.GetString(3), DateJoined=DateOnly.FromDateTime(rdr.GetDateTime(4))
+                                        };
                 
             return myUser;
         }
