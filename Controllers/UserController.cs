@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TEA_Project_API.Models;
+using TEA_Project_API.Database;
+using TEA_Project_API.Database.Users;
 
 namespace TEA_Project_API.Controllers
 {
@@ -13,28 +16,30 @@ namespace TEA_Project_API.Controllers
     {
         // GET: api/User
         [HttpGet(Name = "GetUsers")]
-        public IEnumerable<string> Get()
+        public IEnumerable<User> Get()
         {
-            return new string[] { "value1", "value2" };
+            return ReadUsers;
         }
 
         // GET: api/User/5
         [HttpGet("{id}", Name = "GetUser")]
         public string Get(int id)
         {
-            return "value";
+            return ReadUsers.GetAllUsers();
         }
 
         // POST: api/User
         [HttpPost(Name = "PostUser")]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] User myUser)
         {
+            SaveUser.NewUser(myUser);
         }
 
         // PUT: api/User/5
         [HttpPut("{id}", Name = "PutUser")]
-        public void Put(int id, [FromBody] string value)
+        public void Put([FromBody] User myUser)
         {
+            SaveUser.UpdateUser(myUser);
         }
 
         // DELETE: api/User/5
