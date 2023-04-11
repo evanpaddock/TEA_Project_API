@@ -32,18 +32,18 @@ namespace TEA_Project_API.Database.Users
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = @$"UPDATE User 
+            string stm = @$"UPDATE USER 
                             SET UserName=@UserName, Password=@Password, UserEmail=@UserEmail, DateJoined=@DateJoined, Role_ID=@Role_ID
-                            WHERE UserID=@UserID";
+                            WHERE User_ID=@User_ID";
 
             using var cmd = new MySqlCommand(stm, con);
 
-            cmd.Parameters.AddWithValue("@UserName", myUser.Make);
+            cmd.Parameters.AddWithValue("@UserName", myUser.UserName);
             cmd.Parameters.AddWithValue("@Password", myUser.Password);
             cmd.Parameters.AddWithValue("@UserEmail", myUser.UserEmail);
             cmd.Parameters.AddWithValue("@DateJoined", myUser.DateJoined);
             cmd.Parameters.AddWithValue("@Role_ID", myUser.Role_ID);
-            cmd.Parameters.AddWithValue("@UserID", myUser.UserID);
+            cmd.Parameters.AddWithValue("@User_ID", myUser.User_ID);
 
             cmd.Prepare();
 

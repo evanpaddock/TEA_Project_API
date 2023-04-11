@@ -18,14 +18,14 @@ namespace TEA_Project_API.Controllers
         [HttpGet(Name = "GetUsers")]
         public IEnumerable<User> Get()
         {
-            return ReadUsers;
+            return ReadUsers.GetAllUsers();
         }
 
         // GET: api/User/5
         [HttpGet("{id}", Name = "GetUser")]
-        public string Get(int id)
+        public User Get(int id)
         {
-            return ReadUsers.GetAllUsers();
+            return ReadUsers.GetUser(id);
         }
 
         // POST: api/User
