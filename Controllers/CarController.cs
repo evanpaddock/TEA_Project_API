@@ -32,20 +32,20 @@ namespace TEA_Project_API.Controllers
         [HttpPost(Name = "PostCar")]
         public void Post([FromBody] Car myCar)
         {
-            SaveCar.NewCar(myCar);
+            SaveCars.NewCar(myCar);
         }
 
         // PUT: api/Car/5
         [HttpPut(Name = "PutCar")]
         public void Put([FromBody] Car myCar)
         {
-            SaveCar.UpdateCar(myCar);
+            SaveCars.UpdateCar(myCar);
         }
 
-        // DELETE: api/Car/5
-        [HttpDelete("{id}", Name = "DeleteCar")]
-        public void Delete(int id)
-        {
-        }
+        // // DELETE: api/Car/5
+        // [HttpDelete("{id}", Name = "DeleteCar")]
+        // public void Delete(int id)
+        // {
+        // }
     }
 }

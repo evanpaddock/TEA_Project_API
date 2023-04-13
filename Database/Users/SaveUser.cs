@@ -19,8 +19,7 @@ namespace TEA_Project_API.Database.Users
             cmd.Parameters.AddWithValue("@UserName", myUser.UserName);
             cmd.Parameters.AddWithValue("@Password", myUser.Password);
             cmd.Parameters.AddWithValue("@UserEmail", myUser.UserEmail);
-            cmd.Parameters.AddWithValue("@DateJoined", myUser.DateJoined);
-            cmd.Parameters.AddWithValue("@DateJoined", myUser.DateJoined);
+            cmd.Parameters.AddWithValue("@DateJoined", myUser.DateJoined.ToString());
             cmd.Parameters.AddWithValue("@Role_ID", myUser.Role_ID);
             cmd.Prepare();
 
@@ -41,7 +40,7 @@ namespace TEA_Project_API.Database.Users
             cmd.Parameters.AddWithValue("@UserName", myUser.UserName);
             cmd.Parameters.AddWithValue("@Password", myUser.Password);
             cmd.Parameters.AddWithValue("@UserEmail", myUser.UserEmail);
-            cmd.Parameters.AddWithValue("@DateJoined", myUser.DateJoined);
+            cmd.Parameters.AddWithValue("@DateJoined", myUser.DateJoined.ToString());
             cmd.Parameters.AddWithValue("@Role_ID", myUser.Role_ID);
             cmd.Parameters.AddWithValue("@User_ID", myUser.User_ID);
 

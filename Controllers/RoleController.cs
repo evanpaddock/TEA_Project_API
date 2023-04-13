@@ -37,10 +37,11 @@ namespace TEA_Project_API.Controllers
         {
         }
 
-        // DELETE: api/Role/5
-        [HttpDelete("{id}", Name = "DeleteRole")]
-        public void Delete(int id)
-        {
-        }
+        // // DELETE: api/Role/5
+        // [HttpDelete("{id}", Name = "DeleteRole")]
+        // public void Delete(int id)
+        // {
+
+        // }
     }
 }
