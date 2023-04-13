@@ -3,7 +3,7 @@ using TEA_Project_API.Models;
 
 namespace TEA_Project_API.Database.Cars
 {
-    public class SaveCar
+    public class SaveCars
     {
         static public void NewCar(Car myCar){
             ConnectionString myConnection = new ConnectionString();

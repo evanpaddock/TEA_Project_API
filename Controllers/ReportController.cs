@@ -37,10 +37,10 @@ namespace TEA_Project_API.Controllers
         {
         }
 
-        // DELETE: api/Report/5
-        [HttpDelete("{id}", Name = "DeleteReport")]
-        public void Delete(int id)
-        {
-        }
+        // // DELETE: api/Report/5
+        // [HttpDelete("{id}", Name = "DeleteReport")]
+        // public void Delete(int id)
+        // {
+        // }
     }
 }
