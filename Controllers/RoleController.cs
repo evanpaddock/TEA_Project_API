@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TEA_Project_API.Database.Roles;
+using TEA_Project_API.Models;
 
 namespace TEA_Project_API.Controllers
 {
@@ -13,28 +15,30 @@ namespace TEA_Project_API.Controllers
     {
         // GET: api/Role
         [HttpGet(Name = "GetRoles")]
-        public IEnumerable<string> Get()
+        public IEnumerable<Role> Get()
         {
-            return new string[] { "value1", "value2" };
+            return ReadRoles.GetAllRoles();
         }
 
         // GET: api/Role/5
         [HttpGet("{id}", Name = "GetRole")]
-        public string Get(int id)
+        public Role Get(int id)
         {
-            return "value";
+            return ReadRoles.GetRole(id);
         }
 
         // POST: api/Role
         [HttpPost(Name = "PostRoles")]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Role myRole)
         {
+            SaveRoles.NewRole(myRole);
         }
 
         // PUT: api/Role/5
-        [HttpPut("{id}", Name = "PutRole")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut( Name = "PutRole")]
+        public void Put([FromBody] Role myRole)
         {
+            SaveRoles.UpdateRole(myRole);
         }
 
         // // DELETE: api/Role/5

@@ -1,41 +1,40 @@
 using MySql.Data.MySqlClient;
 using TEA_Project_API.Models;
 
-namespace TEA_Project_API.Database.Users
+namespace TEA_Project_API.Database.Reports
 {
-    public class ReadUsers
+    public class ReadReports
     {
-        static public List<User>  GetAllUsers(){
+        static public List<Report>  GetAllReports(){
             
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.cs;
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = @"SELECT * FROM USER";
+            string stm = @"SELECT * FROM REPORT";
             using var cmd = new MySqlCommand(stm, con);
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
-            List<User> myUsers = new List<User>();
+            List<Report> myReports = new List<Report>();
 
             while (rdr.Read()) {
-                User myUser = new User(){User_ID=rdr.GetInt32(2),UserName=rdr.GetString(0), 
-                                        Password=rdr.GetString(1), UserEmail=rdr.GetString(3), DateJoined=rdr.GetString(4),
-                                        Role_ID=rdr.GetInt32(5)
+                Report myReport = new Report(){Report_ID=rdr.GetInt32(0),ReportName=rdr.GetString(1), 
+                                        Deleted=rdr.GetBoolean(2)
                                         };
                 
-                myUsers.Add(myUser);
+                myReports.Add(myReport);
             }
-            return myUsers;
+            return myReports;
         }
-        static public User GetUser(int id){
+        static public Report GetReport(int id){
             
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.cs;
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = @"SELECT * FROM USER WHERE User_ID=@id";
+            string stm = @"SELECT * FROM REPORT WHERE Report_ID=@id";
 
             using var cmd = new MySqlCommand(stm, con);
             cmd.Parameters.AddWithValue("@id", id);
@@ -44,12 +43,11 @@ namespace TEA_Project_API.Database.Users
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
             rdr.Read();
-            User myUser = new User(){User_ID=rdr.GetInt32(2),UserName=rdr.GetString(0), 
-                                        Password=rdr.GetString(1), UserEmail=rdr.GetString(3), DateJoined=rdr.GetString(4),
-                                        Role_ID=rdr.GetInt32(5)
+            Report myReport = new Report(){Report_ID=rdr.GetInt32(0),ReportName=rdr.GetString(1), 
+                                        Deleted=rdr.GetBoolean(2)
                                         };
                 
-            return myUser;
+            return myReport;
         }
     }
 }
