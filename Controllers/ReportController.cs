@@ -31,13 +31,14 @@ namespace TEA_Project_API.Controllers
         [HttpPost(Name = "PostReport")]
         public void Post([FromBody] Report myReport)
         {
-            
+            SaveReport.NewReport(myReport);
         }
 
         // PUT: api/Report/5
-        [HttpPut("{id}",Name = "PutReport")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut(Name = "PutReport")]
+        public void Put([FromBody] Report myReport)
         {
+            SaveReport.UpdateReport(myReport);
         }
 
         // // DELETE: api/Report/5

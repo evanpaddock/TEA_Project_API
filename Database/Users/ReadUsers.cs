@@ -20,7 +20,8 @@ namespace TEA_Project_API.Database.Users
 
             while (rdr.Read()) {
                 User myUser = new User(){User_ID=rdr.GetInt32(2),UserName=rdr.GetString(0), 
-                                        Password=rdr.GetString(1), UserEmail=rdr.GetString(3), DateJoined=rdr.GetString(4)
+                                        Password=rdr.GetString(1), UserEmail=rdr.GetString(3), DateJoined=rdr.GetString(4),
+                                        Role_ID=rdr.GetInt32(5)
                                         };
                 
                 myUsers.Add(myUser);
@@ -44,7 +45,8 @@ namespace TEA_Project_API.Database.Users
 
             rdr.Read();
             User myUser = new User(){User_ID=rdr.GetInt32(2),UserName=rdr.GetString(0), 
-                                        Password=rdr.GetString(1), UserEmail=rdr.GetString(3), DateJoined=rdr.GetString(4)
+                                        Password=rdr.GetString(1), UserEmail=rdr.GetString(3), DateJoined=rdr.GetString(4),
+                                        Role_ID=rdr.GetInt32(5)
                                         };
                 
             return myUser;

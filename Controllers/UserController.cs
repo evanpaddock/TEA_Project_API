@@ -36,7 +36,7 @@ namespace TEA_Project_API.Controllers
         }
 
         // PUT: api/User/5
-        [HttpPut("{id}", Name = "PutUser")]
+        [HttpPut(Name = "PutUser")]
         public void Put([FromBody] User myUser)
         {
             SaveUser.UpdateUser(myUser);
