@@ -44,8 +44,8 @@ namespace TEA_Project_API.Database.Users
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
             rdr.Read();
-            User myUser = new User(){User_ID=rdr.GetInt32(2),UserName=rdr.GetString(0), 
-                                        Password=rdr.GetString(1), UserEmail=rdr.GetString(3), DateJoined=rdr.GetString(4),
+            User myUser = new User(){User_ID=rdr.GetInt32(0),UserName=rdr.GetString(1), 
+                                        Password=rdr.GetString(2), UserEmail=rdr.GetString(3), DateJoined=rdr.GetString(4),
                                         FirstName=rdr.GetString(5),LastName=rdr.GetString(6), State=rdr.GetString(7), Role_ID=rdr.GetInt32(8)
                                         };
                 
