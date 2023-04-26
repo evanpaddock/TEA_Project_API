@@ -11,8 +11,8 @@ namespace TEA_Project_API.Database.Cars
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = @"INSERT INTO CAR(Make, Model, Trim, Year, Deleted, Gas_Mileage, Tank_Size, Fuel_Type, HorsePower, Torque, Transmission) 
-                            VALUES(@Make, @Model, @Trim, @Year, @Deleted, @Gas_Mileage, @Tank_Size, @Fuel_Type, @HorsePower, @Torque, @Transmission)";
+            string stm = @"INSERT INTO CAR(Make, Model, Trim, Year, Deleted, Gas_Mileage, Tank_Size, Fuel_Type, HorsePower, Torque, Transmission, TimesViewed) 
+                            VALUES(@Make, @Model, @Trim, @Year, @Deleted, @Gas_Mileage, @Tank_Size, @Fuel_Type, @HorsePower, @Torque, @Transmission, @TimesViewed)";
 
             using var cmd = new MySqlCommand(stm, con);
 
@@ -27,6 +27,7 @@ namespace TEA_Project_API.Database.Cars
             cmd.Parameters.AddWithValue("@HorsePower", myCar.HorsePower);
             cmd.Parameters.AddWithValue("@Torque", myCar.Torque);
             cmd.Parameters.AddWithValue("@Transmission", myCar.Transmission);
+            cmd.Parameters.AddWithValue("@TimesViewed", myCar.TimesViewed);
 
             cmd.Prepare();
 
@@ -39,7 +40,7 @@ namespace TEA_Project_API.Database.Cars
             con.Open();
 
             string stm = @$"UPDATE CAR 
-                            SET Make=@Make, Model=@Model, Trim=@Trim, Year=@Year, Deleted=@Deleted, Gas_Mileage=@Gas_Mileage, Tank_Size=@Tank_Size, Fuel_Type=@Fuel_Type, HorsePower=@HorsePower, Torque=@Torque, Transmission=@Transmission
+                            SET Make=@Make, Model=@Model, Trim=@Trim, Year=@Year, Deleted=@Deleted, Gas_Mileage=@Gas_Mileage, Tank_Size=@Tank_Size, Fuel_Type=@Fuel_Type, HorsePower=@HorsePower, Torque=@Torque, Transmission=@Transmission, TimesViewed=@TimesViewed
                             WHERE CarID=@CarID";
 
             using var cmd = new MySqlCommand(stm, con);
@@ -55,6 +56,7 @@ namespace TEA_Project_API.Database.Cars
             cmd.Parameters.AddWithValue("@HorsePower", myCar.HorsePower);
             cmd.Parameters.AddWithValue("@Torque", myCar.Torque);
             cmd.Parameters.AddWithValue("@Transmission", myCar.Transmission);
+            cmd.Parameters.AddWithValue("@TimesViewed", myCar.TimesViewed);
             cmd.Parameters.AddWithValue("@CarID", myCar.CarID);
 
             cmd.Prepare();
