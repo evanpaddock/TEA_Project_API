@@ -14,5 +14,6 @@ namespace TEA_Project_API.Models
         public int HorsePower{get; set;}
         public int Torque{get; set;}
         public string Transmission{get; set;}
+        public int TimesViewed{get; set;}
     }
 }
