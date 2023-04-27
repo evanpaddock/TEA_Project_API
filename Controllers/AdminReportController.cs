@@ -20,29 +20,19 @@ namespace TEA_Project_API.Controllers
         {
             return MostCommonMake.GetMakeAndTotals();
         }
+
         [HttpGet]
         [Route("CarCombinations")]
-        public List<CarCombinations> Get()
+        public List<CarCombinations> GetCarCombinations()
         {
             return MostCommonCarCombinationReports.GetTotalCombinations();
         }
 
-        // POST: api/AdminReport
-        // [HttpPost]
-        // public void Post([FromBody] string value)
-        // {
-        // }
-
-        // PUT: api/AdminReport/5
-        // [HttpPut("{id}")]
-        // public void Put(int id, [FromBody] string value)
-        // {
-        // }
-
-        // DELETE: api/AdminReport/5
-        // [HttpDelete("{id}")]
-        // public void Delete(int id)
-        // {
-        // }
+        [HttpGet]
+        [Route("UserStateTotals")]
+        public List<UserStateTotals> GetUserStateCounts()
+        {
+            return UserStateCounts.GetUserStateTotals();
+        }
     }
 }

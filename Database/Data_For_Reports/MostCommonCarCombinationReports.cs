@@ -26,7 +26,7 @@ namespace TEA_Project_API.Database.Data_For_Reports
 
             while (rdr.Read()) {
                 CarCombinations myCarCombination = new CarCombinations(){
-                    BothCarMakes=rdr.GetString(0) + " " + rdr.GetString(1), TotalSame=rdr.GetInt32(2)
+                    BothCarMakes=rdr.GetString(0) + " & " + rdr.GetString(1), TotalSame=rdr.GetInt32(2)
                 };
                 
                 myCarCombinations.Add(myCarCombination);
