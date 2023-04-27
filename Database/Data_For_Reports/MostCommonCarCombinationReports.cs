@@ -1,11 +1,10 @@
-using MySql.Data.MySqlClient;
 using TEA_Project_API.Models;
 
 namespace TEA_Project_API.Database.Data_For_Reports
 {
-    public class MostCommonMake
+    public class MostCommonCarCombinationReports
     {
-        static public List<MakeAndTotal> GetMakeAndTotals(){
+        static public List<Car> GetMakeAndTotals(){
             
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.cs;
@@ -13,9 +12,7 @@ namespace TEA_Project_API.Database.Data_For_Reports
             con.Open();
 
             string stm = @"SELECT Make, TimesViewed
-                            FROM car
-                            ORDER BY TimesViewed DESC
-                            LIMIT 10;";
+                            FROM car;";
             using var cmd = new MySqlCommand(stm, con);
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
