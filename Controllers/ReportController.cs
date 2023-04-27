@@ -40,11 +40,5 @@ namespace TEA_Project_API.Controllers
         {
             SaveReport.UpdateReport(myReport);
         }
-
-        // // DELETE: api/Report/5
-        // [HttpDelete("{id}", Name = "DeleteReport")]
-        // public void Delete(int id)
-        // {
-        // }
     }
 }

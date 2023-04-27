@@ -40,12 +40,5 @@ namespace TEA_Project_API.Controllers
         {
             SaveRoles.UpdateRole(myRole);
         }
-
-        // // DELETE: api/Role/5
-        // [HttpDelete("{id}", Name = "DeleteRole")]
-        // public void Delete(int id)
-        // {
-
-        // }
     }
 }
