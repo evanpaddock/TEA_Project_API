@@ -13,13 +13,6 @@ namespace TEA_Project_API.Controllers
     [ApiController]
     public class AdminReportController : ControllerBase
     {
-        // GET: api/AdminReport
-        // [HttpGet]
-        // public IEnumerable<string> Get()
-        // {
-        //     return new string[] { "value1", "value2" };
-        // }
-
         // GET: api/AdminReport/5
         [HttpGet]
         [Route("MakeAndTotal")]

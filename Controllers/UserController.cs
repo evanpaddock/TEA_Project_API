@@ -41,11 +41,5 @@ namespace TEA_Project_API.Controllers
         {
             SaveUser.UpdateUser(myUser);
         }
-
-        // // DELETE: api/User/5
-        // [HttpDelete("{id}", Name = "DeleteUser")]
-        // public void Delete(int id)
-        // {
-        // }
     }
 }
