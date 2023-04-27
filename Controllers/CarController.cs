@@ -42,10 +42,5 @@ namespace TEA_Project_API.Controllers
             SaveCars.UpdateCar(myCar);
         }
 
-        // // DELETE: api/Car/5
-        // [HttpDelete("{id}", Name = "DeleteCar")]
-        // public void Delete(int id)
-        // {
-        // }
     }
 }
