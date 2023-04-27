@@ -22,9 +22,16 @@ namespace TEA_Project_API.Controllers
 
         // GET: api/AdminReport/5
         [HttpGet]
-        public List<MakeAndTotal> Get()
+        [Route("MakeAndTotal")]
+        public List<MakeAndTotal> GetMakeAndTotals()
         {
             return MostCommonMake.GetMakeAndTotals();
+        }
+        [HttpGet]
+        [Route("CarCombinations")]
+        public List<CarCombinations> Get()
+        {
+            return MostCommonCarCombinationReports.GetTotalCombinations();
         }
 
         // POST: api/AdminReport
