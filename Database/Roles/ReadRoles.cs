@@ -25,6 +25,7 @@ namespace TEA_Project_API.Database.Roles
                 
                 myRoles.Add(myRole);
             }
+
             return myRoles;
         }
         static public Role GetRole(int role_id){
@@ -47,7 +48,7 @@ namespace TEA_Project_API.Database.Roles
 
             Role myRole = new Role(){Role_ID=rdr.GetInt32(0), RoleName=rdr.GetString(1), Edit_Page_TF=rdr.GetBoolean(2),
                 Reports_Able_TF=rdr.GetBoolean(3), Admin_Page_TF=rdr.GetBoolean(4), User_Page_TF=rdr.GetBoolean(5)};
-                
+            
             return myRole;
         }
     }

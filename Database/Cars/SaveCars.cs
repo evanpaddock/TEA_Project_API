@@ -32,6 +32,8 @@ namespace TEA_Project_API.Database.Cars
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
+
+            con.Close();
         }
         static public void UpdateCar(Car myCar){
             ConnectionString myConnection = new ConnectionString();
@@ -62,6 +64,7 @@ namespace TEA_Project_API.Database.Cars
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
+
         }
     }
 }

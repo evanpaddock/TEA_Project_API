@@ -26,6 +26,9 @@ namespace TEA_Project_API.Database.Report_Cars
                 
                 myCarReports.Add(myCarReport);
             }
+
+            con.Close();
+
             return myCarReports;
         }
         static public CarReport GetCarReport(int Report_ID){
