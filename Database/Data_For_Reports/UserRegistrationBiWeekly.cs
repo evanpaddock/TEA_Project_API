@@ -14,6 +14,7 @@ namespace TEA_Project_API.Database.Data_For_Reports
 
             string stm = @"SELECT DateJoined, COUNT(DateJoined) as Total
                             FROM user
+                            WHERE STR_TO_DATE(DateJoined,'%m/%d/%Y') BETWEEN DATE_SUB(NOW(), INTERVAL 2 WEEK) AND NOW()
                             GROUP BY DateJoined;";
             using var cmd = new MySqlCommand(stm, con);
             using MySqlDataReader rdr = cmd.ExecuteReader();
