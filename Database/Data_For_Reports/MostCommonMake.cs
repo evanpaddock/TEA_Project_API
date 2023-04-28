@@ -14,6 +14,7 @@ namespace TEA_Project_API.Database.Data_For_Reports
 
             string stm = @"SELECT Make, TimesViewed
                             FROM car
+                            Group by Make
                             ORDER BY TimesViewed DESC
                             LIMIT 10;";
             using var cmd = new MySqlCommand(stm, con);

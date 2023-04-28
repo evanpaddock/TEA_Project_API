@@ -40,7 +40,7 @@ namespace TEA_Project_API.Database.User_Reports
 
             using var cmd = new MySqlCommand(stm, con);
 
-            cmd.Parameters.AddWithValue("@id", User_ID);
+            cmd.Parameters.AddWithValue("@User_ID", User_ID);
             cmd.Prepare();
 
 

@@ -4,7 +4,7 @@ namespace TEA_Project_API.Database.GenInfo
 {
     public class SaveInfo
     {
-        static public void SaveGenInfo(string title, string text){
+        static public void SaveGenInfo(Models.GenInfo myPageInfo){
             
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.cs;
@@ -17,8 +17,8 @@ namespace TEA_Project_API.Database.GenInfo
 
             using var cmd = new MySqlCommand(stm, con);
 
-            cmd.Parameters.AddWithValue("@Title", title);
-            cmd.Parameters.AddWithValue("@Text", text);
+            cmd.Parameters.AddWithValue("@Title", myPageInfo.Title);
+            cmd.Parameters.AddWithValue("@Text", myPageInfo.Text);
 
             cmd.Prepare();
 

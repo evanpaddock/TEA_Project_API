@@ -48,6 +48,7 @@ namespace TEA_Project_API.Database.Users
             cmd.Parameters.AddWithValue("@State", myUser.State);
             cmd.Parameters.AddWithValue("@DateJoined", myUser.DateJoined);
             cmd.Parameters.AddWithValue("@Role_ID", myUser.Role_ID);
+            cmd.Parameters.AddWithValue("@User_ID", myUser.User_ID);
 
             cmd.Prepare();
 

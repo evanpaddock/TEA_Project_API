@@ -22,7 +22,7 @@ namespace TEA_Project_API.Controllers
         }
 
         [HttpGet]
-        [Route("CarCombinations")]
+        [Route("FuelTypeAndTotal")]
         public List<CarCombinations> GetCarCombinations()
         {
             return MostCommonCarCombinationReports.GetTotalCombinations();

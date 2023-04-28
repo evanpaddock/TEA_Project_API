@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TEA_Project_API.Database.GenInfo;
+using TEA_Project_API.Models;
 
 namespace TEA_Project_API.Controllers
 {
@@ -21,9 +22,9 @@ namespace TEA_Project_API.Controllers
 
         // PUT: api/GenInfo/5
         [HttpPut]
-        public void Put(string title, string text)
+        public void Put([FromBody] Models.GenInfo newPageInfo)
         {
-            SaveInfo.SaveGenInfo(title, text);
+            SaveInfo.SaveGenInfo(newPageInfo);
         }
     }
 }
