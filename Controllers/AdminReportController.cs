@@ -34,5 +34,12 @@ namespace TEA_Project_API.Controllers
         {
             return UserStateCounts.GetUserStateTotals();
         }
+
+        [HttpGet]
+        [Route("DateJoinedTotals")]
+        public List<UserDatesJoined> GetDateJoinedTotals()
+        {
+            return UserRegistrationBiWeekly.GetUserDatesJoined();
+        }
     }
 }

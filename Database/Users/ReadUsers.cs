@@ -26,6 +26,7 @@ namespace TEA_Project_API.Database.Users
                 
                 myUsers.Add(myUser);
             }
+            
             return myUsers;
         }
         static public User GetUser(int id){
@@ -48,7 +49,7 @@ namespace TEA_Project_API.Database.Users
                                         Password=rdr.GetString(2), UserEmail=rdr.GetString(3), DateJoined=rdr.GetString(4),
                                         FirstName=rdr.GetString(5),LastName=rdr.GetString(6), State=rdr.GetString(7), Role_ID=rdr.GetInt32(8)
                                         };
-                
+
             return myUser;
         }
     }

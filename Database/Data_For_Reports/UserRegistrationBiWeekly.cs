@@ -3,33 +3,32 @@ using TEA_Project_API.Models;
 
 namespace TEA_Project_API.Database.Data_For_Reports
 {
-    public class UserStateCounts
+    public class UserRegistrationBiWeekly
     {
-        static public List<UserStateTotals> GetUserStateTotals(){
+        static public List<UserDatesJoined> GetUserDatesJoined(){
             
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.cs;
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            string stm = @"SELECT State, COUNT(DISTINCT User_ID) as TotalCount
+            string stm = @"SELECT DateJoined, COUNT(DateJoined) as Total
                             FROM user
-                            GROUP BY State;";
+                            GROUP BY DateJoined;";
             using var cmd = new MySqlCommand(stm, con);
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
-            List<UserStateTotals> myStateCounts = new List<UserStateTotals>();
+            List<UserDatesJoined> myMostCommonMakes = new List<UserDatesJoined>();
 
             while (rdr.Read()) {
-                UserStateTotals myStateCount = new UserStateTotals(){
-                    State=rdr.GetString(0), TotalCount=rdr.GetInt32(1)
+                UserDatesJoined myMostCommonMake = new UserDatesJoined(){
+                    DateJoined=rdr.GetString(0), Total=rdr.GetInt32(1)
                 };
                 
-                myStateCounts.Add(myStateCount);
+                myMostCommonMakes.Add(myMostCommonMake);
             }
             
-
-            return myStateCounts;
+            return myMostCommonMakes;
         }
     }
 }

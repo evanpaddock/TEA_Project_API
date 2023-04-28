@@ -24,6 +24,7 @@ namespace TEA_Project_API.Database.User_Reports
                 
                 myUserReports.Add(myUserReport);
             }
+
             return myUserReports;
         }
         static public UserReport GetUserReport(int User_ID){

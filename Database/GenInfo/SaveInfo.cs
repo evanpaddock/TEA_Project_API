@@ -4,7 +4,7 @@ namespace TEA_Project_API.Database.GenInfo
 {
     public class SaveInfo
     {
-        static public Models.GenInfo SaveGenInfo(string title, string text){
+        static public void SaveGenInfo(string title, string text){
             
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.cs;
@@ -22,13 +22,7 @@ namespace TEA_Project_API.Database.GenInfo
 
             cmd.Prepare();
 
-            using MySqlDataReader rdr = cmd.ExecuteReader();
-
-            rdr.Read();
-
-            Models.GenInfo myInfoPageText = new Models.GenInfo(){};
-                
-            return myInfoPageText;
+            cmd.ExecuteNonQuery();
         }
     }
 }
