@@ -65,7 +65,6 @@ namespace TEA_Project_API.Database.Cars
 
             cmd.ExecuteNonQuery();
 
-            con.Close();
         }
     }
 }

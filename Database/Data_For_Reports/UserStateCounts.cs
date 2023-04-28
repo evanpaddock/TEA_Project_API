@@ -28,7 +28,6 @@ namespace TEA_Project_API.Database.Data_For_Reports
                 myStateCounts.Add(myStateCount);
             }
             
-            con.Close();
 
             return myStateCounts;
         }

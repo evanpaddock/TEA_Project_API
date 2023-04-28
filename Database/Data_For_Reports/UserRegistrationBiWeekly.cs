@@ -27,8 +27,7 @@ namespace TEA_Project_API.Database.Data_For_Reports
                 
                 myMostCommonMakes.Add(myMostCommonMake);
             }
-            con.Close();
-
+            
             return myMostCommonMakes;
         }
     }

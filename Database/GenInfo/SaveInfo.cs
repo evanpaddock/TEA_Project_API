@@ -22,9 +22,7 @@ namespace TEA_Project_API.Database.GenInfo
 
             cmd.Prepare();
 
-            using MySqlDataReader rdr = cmd.ExecuteReader();
-            
-            con.Close();
+            cmd.ExecuteNonQuery();
         }
     }
 }

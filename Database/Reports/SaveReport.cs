@@ -23,8 +23,6 @@ namespace TEA_Project_API.Database.Reports
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
-
-            con.Close();
         }
         static public void UpdateReport(Report myReport){
             ConnectionString myConnection = new ConnectionString();
@@ -45,8 +43,6 @@ namespace TEA_Project_API.Database.Reports
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
-
-            con.Close();
         }
     }
 }
