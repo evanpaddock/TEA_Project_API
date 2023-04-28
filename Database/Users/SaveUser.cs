@@ -52,6 +52,8 @@ namespace TEA_Project_API.Database.Users
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
+
+            con.Close();
         }
     }
 }

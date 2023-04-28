@@ -25,6 +25,8 @@ namespace TEA_Project_API.Database.GenInfo
 
             Models.GenInfo myInfoPageText = new Models.GenInfo(){Title=rdr.GetString(0), Text=rdr.GetString(1)};
                 
+            con.Close();
+
             return myInfoPageText;
         }
     }

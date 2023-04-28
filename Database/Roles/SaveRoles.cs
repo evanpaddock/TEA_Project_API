@@ -26,6 +26,8 @@ namespace TEA_Project_API.Database.Roles
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
+
+            con.Close();
         }
         static public void UpdateRole(Role myRole){
             ConnectionString myConnection = new ConnectionString();
@@ -50,6 +52,8 @@ namespace TEA_Project_API.Database.Roles
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
+
+            con.Close();
         }
     }
 }

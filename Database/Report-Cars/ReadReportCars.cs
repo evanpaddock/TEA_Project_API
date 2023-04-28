@@ -26,6 +26,9 @@ namespace TEA_Project_API.Database.Report_Cars
                 
                 myCarReports.Add(myCarReport);
             }
+
+            con.Close();
+
             return myCarReports;
         }
         static public CarReport GetCarReport(int Report_ID){
@@ -48,6 +51,8 @@ namespace TEA_Project_API.Database.Report_Cars
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
             CarReport myCarReport = new CarReport(){Report_ID=rdr.GetInt32(0), CarID=rdr.GetInt32(1)};
+
+            con.Close();
             
             return myCarReport;
         }

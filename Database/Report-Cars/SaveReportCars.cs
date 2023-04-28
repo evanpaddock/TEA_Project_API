@@ -23,6 +23,8 @@ namespace TEA_Project_API.Database.Report_Cars
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
+
+            con.Close();
         }
     }
 }

@@ -23,6 +23,8 @@ namespace TEA_Project_API.Database.User_Reports
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
+
+            con.Close();
         }
     }
 }

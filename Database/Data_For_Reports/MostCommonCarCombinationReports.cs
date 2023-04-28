@@ -32,6 +32,7 @@ namespace TEA_Project_API.Database.Data_For_Reports
                 myCarCombinations.Add(myCarCombination);
             }
 
+            con.Close();
 
             return myCarCombinations;
         }

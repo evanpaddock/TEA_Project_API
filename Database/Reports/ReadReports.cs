@@ -25,6 +25,9 @@ namespace TEA_Project_API.Database.Reports
                 
                 myReports.Add(myReport);
             }
+
+            con.Close();
+
             return myReports;
         }
         static public Report GetReport(int id){

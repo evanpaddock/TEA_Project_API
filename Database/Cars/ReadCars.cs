@@ -27,6 +27,9 @@ namespace TEA_Project_API.Database.Cars
                 
                 myCars.Add(myCar);
             }
+
+            con.Close();
+
             return myCars;
         }
         static public Car GetCar(int id){
@@ -50,7 +53,9 @@ namespace TEA_Project_API.Database.Cars
                                         Gas_Mileage=rdr.GetString(5), Tank_Size=rdr.GetString(6), Fuel_Type=rdr.GetString(7),
                                         HorsePower = rdr.GetInt32(8), Torque = rdr.GetInt32(9), Transmission = rdr.GetString(10),
                                         TimesViewed=rdr.GetInt32(11), Deleted = rdr.GetBoolean(12)};
-                
+            
+            con.Close();
+
             return myCar;
         }
     }   

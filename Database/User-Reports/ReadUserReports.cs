@@ -24,6 +24,9 @@ namespace TEA_Project_API.Database.User_Reports
                 
                 myUserReports.Add(myUserReport);
             }
+            
+            con.Close();
+
             return myUserReports;
         }
         static public UserReport GetUserReport(int User_ID){
@@ -46,6 +49,8 @@ namespace TEA_Project_API.Database.User_Reports
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
             UserReport myUserReport = new UserReport(){Report_ID=rdr.GetInt32(0), User_ID=rdr.GetInt32(1)};
+
+            con.Close();
             
             return myUserReport;
         }
